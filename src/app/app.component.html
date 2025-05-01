@@ -24,8 +24,12 @@
         />
         <span>{{ task.title }}</span>
         <button (click)="deleteTask(task.id)">Delete</button>
+
+        
       </li>
     </ul>
     <p *ngIf="tasks.length === 0">No tasks yet. Add one above!</p>
+    <button (click)="clearAllTasks()" [disabled]="tasks.length === 0">Clear All</button>
+
   </div>
 </main>
