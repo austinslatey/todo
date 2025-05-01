@@ -2,19 +2,19 @@
 A simple To-Do List application built with Angular and SCSS. Users can add tasks, mark them as completed, delete tasks, and view a list of tasks. The app uses a service to manage task data and Template-driven Forms for user input, with input validation to ensure non-empty task titles. This project is a beginner-friendly introduction to Angular concepts like components, services, forms, and SCSS styling.
 
 ## Features
-Add tasks with a title.
+- Add tasks with a title.
 
-Mark tasks as completed using checkboxes.
+- Mark tasks as completed using checkboxes.
 
-Delete individual tasks.
+- Delete individual tasks.
 
-Display tasks in a styled list with *ngFor.
+- Display tasks in a styled list with *ngFor.
 
-Input validation to prevent empty tasks.
+- Input validation to prevent empty tasks.
 
-Responsive design with SCSS (using modern color.adjust for color manipulation).
+- Responsive design with SCSS (using modern color.adjust for color manipulation).
 
-Task data managed via a TodoService for scalability.
+- Task data managed via a TodoService for scalability.
 
 ## Prerequisites 
 Node.js (v18 or later)
@@ -25,15 +25,17 @@ npm install -g @angular/cli
 ```
 
 ## Setup
-`git clone https://github.com/your-username/todo-app.git`
+1. `git clone https://github.com/austinslatey/todo-app.git`
 
-`cd todo-app`
+2. `cd todo-app`
 
 - Install Dependencies:
-`npm install`
+
+    `npm install`
 
 - Run the Development Server
-`ng serve`
+
+    `ng serve`
 
 Open http://localhost:4200 in your browser to view the app.
 
