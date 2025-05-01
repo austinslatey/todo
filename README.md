@@ -16,6 +16,8 @@ A simple To-Do List application built with Angular and SCSS. Users can add tasks
 
 - Task data managed via a TodoService for scalability.
 
+- Tasks are stored using Local Storage
+
 ## Prerequisites 
 Node.js (v18 or later)
 
