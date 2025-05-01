@@ -1,59 +1,74 @@
-# TodoApp
+# To-Do List App
+A simple To-Do List application built with Angular and SCSS. Users can add tasks, mark them as completed, delete tasks, and view a list of tasks. The app uses a service to manage task data and Template-driven Forms for user input, with input validation to ensure non-empty task titles. This project is a beginner-friendly introduction to Angular concepts like components, services, forms, and SCSS styling.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
+## Features
+Add tasks with a title.
 
-## Development server
+Mark tasks as completed using checkboxes.
 
-To start a local development server, run:
+Delete individual tasks.
 
-```bash
-ng serve
+Display tasks in a styled list with *ngFor.
+
+Input validation to prevent empty tasks.
+
+Responsive design with SCSS (using modern color.adjust for color manipulation).
+
+Task data managed via a TodoService for scalability.
+
+## Prerequisites 
+Node.js (v18 or later)
+
+Angular CLI: Install globally with
+```
+npm install -g @angular/cli
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Setup
+`git clone https://github.com/your-username/todo-app.git`
 
-## Code scaffolding
+`cd todo-app`
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Install Dependencies:
+`npm install`
 
-```bash
-ng generate component component-name
-```
+- Run the Development Server
+`ng serve`
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Open http://localhost:4200 in your browser to view the app.
 
-```bash
-ng generate --help
-```
 
-## Building
+## Usage
+- Add a Task: 
+    Enter a task title in the input field and click "Add Task" (disabled if empty).
 
-To build the project run:
+- Complete a Task: 
+    Check the checkbox next to a task to mark it as completed (strikethrough applied).
 
-```bash
-ng build
-```
+- Delete a Task: 
+    Click the "Delete" button next to a task to remove it.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- View Tasks: 
+    Tasks are displayed in a list, with a message shown if the list is empty.
 
-## Running unit tests
+## Project Structure 
+- `src/app/app.component.ts`: Main component with task logic and form handling.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- `src/app/app.component.html`: Template with form and task list using *ngFor.
 
-```bash
-ng test
-```
+- `src/app/app.component.scss`: SCSS styles with variables and modern color.adjust for hover effects.
 
-## Running end-to-end tests
+- `src/app/todo.service.ts`: Service to manage task data (add, toggle, delete).
 
-For end-to-end (e2e) testing, run:
+- `src/app/app.module.ts` (or standalone component): Configures FormsModule and CommonModule.
 
-```bash
-ng e2e
-```
+## Dependencies 
+- `Angular: v17+` (check package.json for exact version)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- `Sass`: For SCSS compilation (uses modern sass:color module)
 
-## Additional Resources
+- `FormsModule`: For Template-driven Forms with [(ngModel)]
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+
