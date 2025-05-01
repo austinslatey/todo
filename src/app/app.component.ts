@@ -37,4 +37,9 @@ export class AppComponent {
   deleteTask(id: number) {
     this.tasks = this.tasks.filter(task => task.id !== id);
   }
+
+  // delete all tasks
+  clearAllTasks() {
+    this.tasks = [];
+  }
 }
