@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { throwIfEmpty } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'; // Add this
 
 interface Task {
   id: number;
@@ -8,36 +8,33 @@ interface Task {
   completed: boolean;
 }
 
-
 @Component({
+  standalone: true,
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.scss'],
+  imports: [CommonModule, FormsModule] // Add FormsModule
 })
 export class AppComponent {
-  tasks: Task[] = []
-  newTaskTitle: string = "";
+  tasks: Task[] = [];
+  newTaskTitle: string = '';
 
-  addTask(){
-    // check if there is a new task
-    if (this.newTaskTitle.trim()){
+  addTask() {
+    if (this.newTaskTitle.trim()) {
       this.tasks.push({
-        id: this.tasks.length,
+        id: this.tasks.length + 1,
         title: this.newTaskTitle,
         completed: false
       });
-
-      // Clear the input
       this.newTaskTitle = '';
     }
   }
 
-  toggleTaskCompletion(task: Task){
+  toggleTaskCompletion(task: Task) {
     task.completed = !task.completed;
   }
 
-  deleteTask(id:number){
-    this.tasks = this.tasks.filter(task => task.id !== id)
+  deleteTask(id: number) {
+    this.tasks = this.tasks.filter(task => task.id !== id);
   }
 }
