@@ -4,32 +4,21 @@
 
     <!-- Form for adding tasks -->
     <form (ngSubmit)="addTask()">
-      <input
-        type="text"
-        [(ngModel)]="newTaskTitle"
-        name="newTaskTitle"
-        placeholder="Enter a new task"
-        required
-      />
+      <input type="text" [(ngModel)]="newTaskTitle" name="newTaskTitle" placeholder="Enter a new task" required />
       <button type="submit" [disabled]="!newTaskTitle.trim()">Add Task</button>
     </form>
 
     <!-- Task list -->
     <ul *ngIf="tasks.length > 0">
       <li *ngFor="let task of tasks" [class.completed]="task.completed">
-        <input
-          type="checkbox"
-          [checked]="task.completed"
-          (change)="toggleTaskCompletion(task)"
-        />
+        <input type="checkbox" [checked]="task.completed" (change)="toggleTaskCompletion(task)" />
         <span>{{ task.title }}</span>
         <button (click)="deleteTask(task.id)">Delete</button>
-
-        
       </li>
     </ul>
     <p *ngIf="tasks.length === 0">No tasks yet. Add one above!</p>
-    <button (click)="clearAllTasks()" [disabled]="tasks.length === 0">Clear All</button>
 
+    <!-- Clear all tasks button -->
+    <button (click)="clearAllTasks()" [disabled]="tasks.length === 0">Clear All Tasks</button>
   </div>
 </main>
