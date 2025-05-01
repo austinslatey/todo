@@ -44,6 +44,7 @@ export class AppComponent {
 
   toggleTaskCompletion(task: Task) {
     task.completed = !task.completed;
+    this.saveTasks();
   }
 
   deleteTask(id: number) {
