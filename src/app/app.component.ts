@@ -19,6 +19,17 @@ export class AppComponent {
   tasks: Task[] = [];
   newTaskTitle: string = '';
 
+  ngOnInit() {
+    // Load tasks from localStorage on component initialization
+    this.loadTasks();
+  }
+
+  loadTasks() {
+    const saved = localStorage.getItem('tasks');
+    this.tasks = saved ? JSON.parse(saved) : [];
+  }
+
+
   addTask() {
     if (this.newTaskTitle.trim()) {
       this.tasks.push({
@@ -27,6 +38,7 @@ export class AppComponent {
         completed: false
       });
       this.newTaskTitle = '';
+      localStorage.setItem('tasks', JSON.stringify(this.tasks));
     }
   }
 
@@ -41,5 +53,10 @@ export class AppComponent {
   // delete all tasks
   clearAllTasks() {
     this.tasks = [];
+    this.saveTasks();
+  }
+
+  private saveTasks() {
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
 }
