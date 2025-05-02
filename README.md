@@ -1,5 +1,5 @@
 # To-Do List App
-A simple To-Do List application built with Angular and SCSS. Users can add tasks, mark them as completed, delete tasks, and view a list of tasks. The app uses a service to manage task data and Template-driven Forms for user input, with input validation to ensure non-empty task titles. This project is a beginner-friendly introduction to Angular concepts like components, services, forms, and SCSS styling.
+A simple To-Do List application built with **Angular** and **SCSS**. Users can add tasks, mark them as completed, delete tasks, clear all tasks, and view a persistent task list. The app uses a standalone component with Template-driven Forms for input and persists tasks, including completion status, in `localStorage`. The app uses a service to manage task data and Template-driven Forms for user input, with input validation to ensure non-empty task titles. This project is a beginner-friendly introduction to Angular concepts like components, services, forms, and SCSS styling.
 
 ## Features
 - Add tasks with a title.
